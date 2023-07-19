@@ -10,38 +10,38 @@ public:
 	void set_login(std::string log);
 	void set_pasw(std::string pas);
 	void set_name(std::string nam);
-	void sent_mes(std::string s_mes, std::string r_user);   //Отправка сообщения
-	void rec_mes(std::string r_mes, std::string s_user);   //Прием сообщения
+	void sent_mes(std::string s_mes, std::string r_user);   //РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ
+	void rec_mes(std::string r_mes, std::string s_user);   //РџСЂРёРµРј СЃРѕРѕР±С‰РµРЅРёСЏ
 	std::string get_login();
 	std::string get_pasw();
 	std::string get_name();
-	void show_mes();   //Вывод отправленных и входящих сообщений
+	void show_mes();   //Р’С‹РІРѕРґ РѕС‚РїСЂР°РІР»РµРЅРЅС‹С… Рё РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№
 	std::string qw;
 	~user();
 private:
 	std::string login;
 	std::string pasw;
 	std::string name;
-	int sz = 3;   //Количество сохраняемых сообщений
-	struct s_mes   //Отправленные сообщения
+	int sz = 3;   //РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕС…СЂР°РЅСЏРµРјС‹С… СЃРѕРѕР±С‰РµРЅРёР№
+	struct s_mes   //РћС‚РїСЂР°РІР»РµРЅРЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ
 	{
-		std::string sent;   //Сообщение
-		std::string to;   //Кому
+		std::string sent;   //РЎРѕРѕР±С‰РµРЅРёРµ
+		std::string to;   //РљРѕРјСѓ
 	};
-	struct r_mes   //Принятые сообщения
+	struct r_mes   //РџСЂРёРЅСЏС‚С‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ
 	{
-		std::string rec;   //Сообщение
-		std::string from;   //От кого
+		std::string rec;   //РЎРѕРѕР±С‰РµРЅРёРµ
+		std::string from;   //РћС‚ РєРѕРіРѕ
 	};
-	std::deque<s_mes> sm;   //Хранилище отправленных сообщений
-	std::deque<r_mes> rm;   //Хранилище принятых сообщений
+	std::deque<s_mes> sm;   //РҐСЂР°РЅРёР»РёС‰Рµ РѕС‚РїСЂР°РІР»РµРЅРЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№
+	std::deque<r_mes> rm;   //РҐСЂР°РЅРёР»РёС‰Рµ РїСЂРёРЅСЏС‚С‹С… СЃРѕРѕР±С‰РµРЅРёР№
 
-	//string sent_1;   //Отправленное сообщение 1
-	//string sent_2;   //Отправленное сообщение 2
-	//string to_1;     //Кому отправлено сообщение 1
-	//string to_2;     //Кому отправлено сообщение 2
-	//string rec_1;    //Принятое сообщение 1
-	//string rec_2;    //Принятое сообщение 2
-	//string from_1;   //От кого принято сообщение 1
-	//string from_2;   //От кого принято сообщение 2
+	//string sent_1;   //РћС‚РїСЂР°РІР»РµРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ 1
+	//string sent_2;   //РћС‚РїСЂР°РІР»РµРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ 2
+	//string to_1;     //РљРѕРјСѓ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ 1
+	//string to_2;     //РљРѕРјСѓ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ 2
+	//string rec_1;    //РџСЂРёРЅСЏС‚РѕРµ СЃРѕРѕР±С‰РµРЅРёРµ 1
+	//string rec_2;    //РџСЂРёРЅСЏС‚РѕРµ СЃРѕРѕР±С‰РµРЅРёРµ 2
+	//string from_1;   //РћС‚ РєРѕРіРѕ РїСЂРёРЅСЏС‚Рѕ СЃРѕРѕР±С‰РµРЅРёРµ 1
+	//string from_2;   //РћС‚ РєРѕРіРѕ РїСЂРёРЅСЏС‚Рѕ СЃРѕРѕР±С‰РµРЅРёРµ 2
 };

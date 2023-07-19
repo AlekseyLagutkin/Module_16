@@ -6,7 +6,7 @@
 
 user::user()
 {
-	//cout << "Конструктор user" << endl;
+	//cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ user" << endl;
 }
 void user::set_login(std::string log)
 {
@@ -21,7 +21,7 @@ void user::set_name(std::string nam)
 	name = nam;
 }
 
-//void user::sent_mes(string s_mes, string r_user)   //Отправка сообщения
+//void user::sent_mes(string s_mes, string r_user)   //РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ
 //{
 //	sent_2 = sent_1;
 //	to_2 = to_1;
@@ -29,7 +29,7 @@ void user::set_name(std::string nam)
 //	to_1 = r_user;
 //}
 
-void user::sent_mes(std::string s_mes, std::string r_user)   //Отправка сообщения
+void user::sent_mes(std::string s_mes, std::string r_user)   //РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ
 {
 	if (sm.size() >= sz)
 	{
@@ -39,7 +39,7 @@ void user::sent_mes(std::string s_mes, std::string r_user)   //Отправка сообщени
 	sm.push_back(new_sm);
 }
 
-//void user::rec_mes(string r_mes, string s_user)   //Получение сообщения
+//void user::rec_mes(string r_mes, string s_user)   //РџРѕР»СѓС‡РµРЅРёРµ СЃРѕРѕР±С‰РµРЅРёСЏ
 //{
 //	rec_2 = rec_1;
 //	from_2 = from_1;
@@ -47,7 +47,7 @@ void user::sent_mes(std::string s_mes, std::string r_user)   //Отправка сообщени
 //	from_1 = s_user;
 //}
 
-void user::rec_mes(std::string r_mes, std::string s_user)   //Получение сообщения
+void user::rec_mes(std::string r_mes, std::string s_user)   //РџРѕР»СѓС‡РµРЅРёРµ СЃРѕРѕР±С‰РµРЅРёСЏ
 {
 	if (rm.size() >= sz)
 	{
@@ -58,56 +58,56 @@ void user::rec_mes(std::string r_mes, std::string s_user)   //Получение сообщени
 }
 
 
-std::string user::get_login()  //Получение логина
+std::string user::get_login()  //РџРѕР»СѓС‡РµРЅРёРµ Р»РѕРіРёРЅР°
 {
 	return login;
 }
-std::string user::get_pasw()  //Получение пароля
+std::string user::get_pasw()  //РџРѕР»СѓС‡РµРЅРёРµ РїР°СЂРѕР»СЏ
 {
 	return pasw;
 }
-std::string user::get_name()  //Получение имени
+std::string user::get_name()  //РџРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё
 {
 	return name;
 }
-//void user::show_mes()   //Вывод сообщений
+//void user::show_mes()   //Р’С‹РІРѕРґ СЃРѕРѕР±С‰РµРЅРёР№
 //{
-//	cout << endl << "Принятые сообщения:" << endl;
+//	cout << endl << "РџСЂРёРЅСЏС‚С‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ:" << endl;
 //	if (rec_1 != "")
 //	{
-//		cout << rec_1 << "   от   " << from_1 << endl;
+//		cout << rec_1 << "   РѕС‚   " << from_1 << endl;
 //	}
 //	if (rec_2 != "")
 //	{
-//		cout << rec_2 << "   от   " << from_2 << endl;
+//		cout << rec_2 << "   РѕС‚   " << from_2 << endl;
 //	}
-//	cout << "Отправленные сообщения:" << endl;
+//	cout << "РћС‚РїСЂР°РІР»РµРЅРЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ:" << endl;
 //	if (sent_1 != "")
 //	{
-//		cout << sent_1 << "   кому   " << to_1 << endl;
+//		cout << sent_1 << "   РєРѕРјСѓ   " << to_1 << endl;
 //	}
 //	if (sent_2 != "")
 //	{
-//		cout << sent_2 << "   кому   " << to_2 << endl;
+//		cout << sent_2 << "   РєРѕРјСѓ   " << to_2 << endl;
 //	}
 //	cout << endl;
 //}
 
-void user::show_mes()   //Вывод сообщений
+void user::show_mes()   //Р’С‹РІРѕРґ СЃРѕРѕР±С‰РµРЅРёР№
 {
-	std::cout << "Принятые сообщения:" << std::endl;
+	std::cout << "РџСЂРёРЅСЏС‚С‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ:" << std::endl;
 	for (int i = 0; i < rm.size(); ++i)
 	{
-		std::cout << rm[i].rec << "   от   " << rm[i].from << std::endl;
+		std::cout << rm[i].rec << "   РѕС‚   " << rm[i].from << std::endl;
 	}
-	std::cout << "Отправленные сообщения:" << std::endl;
+	std::cout << "РћС‚РїСЂР°РІР»РµРЅРЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ:" << std::endl;
 	for (int i = 0; i < sm.size(); ++i)
 	{
-		std::cout << sm[i].sent << "   кому   " << sm[i].to << std::endl;
+		std::cout << sm[i].sent << "   РєРѕРјСѓ   " << sm[i].to << std::endl;
 	}
 }
 
 user::~user()
 {
-	//cout << "Деструктор user" << endl;
+	//cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ user" << endl;
 }

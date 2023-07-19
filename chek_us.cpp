@@ -6,11 +6,11 @@
 
 chek_us::chek_us(std::vector<user>& _v, int _sizev): v(_v), sizev(_sizev)
 {
-	//cout << "Конструктор chek_us" << endl;
+	//cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ chek_us" << endl;
 }
-int chek_us::chek_logpas()   //Вход пользователя
+int chek_us::chek_logpas()   //Р’С…РѕРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
-	std::cout << "Введите логин:";
+	std::cout << "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ:";
 	std::cin >> log;
 	bool login = false;
 	bool pasw = false;
@@ -18,46 +18,46 @@ int chek_us::chek_logpas()   //Вход пользователя
 	std::vector<user>::iterator it = v.begin();
 	for (i = 0; i < v.size(); ++i)
 	{
-		if (log == (it + i)->get_login())   //Проверка логина
+		if (log == (it + i)->get_login())   //РџСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР°
 		{
 			login = true;
-			std::cout << "Введите пароль:";
+			std::cout << "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			std::cin >> pas;
-			if (pas == (it + i)->get_pasw())   //Проверка пароля
+			if (pas == (it + i)->get_pasw())   //РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ
 			{
 				pasw = true;
 				break;
 			}
 			else
 			{
-				std::cout << "Неверный пароль" << std::endl;
+				std::cout << "РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ" << std::endl;
 				break;
 			}
 		}
 	}
 	if (login && pasw && true)
 	{
-		std::cout << "Вход выполнен\n" << std::endl;
+		std::cout << "Р’С…РѕРґ РІС‹РїРѕР»РЅРµРЅ\n" << std::endl;
 		return i;
 	}
 	if (login == false)
 	{
-		std::cout << "Неверный логин" << std::endl;
+		std::cout << "РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ" << std::endl;
 	}
 	return -1;
 }
-int chek_us::chek_in()   //Регистрация нового пользователя
+int chek_us::chek_in()   //Р РµРіРёСЃС‚СЂР°С†РёСЏ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
-	if (v.size() >= sizev)   //Проверка на переполнение установленного размера 
+	if (v.size() >= sizev)   //РџСЂРѕРІРµСЂРєР° РЅР° РїРµСЂРµРїРѕР»РЅРµРЅРёРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ СЂР°Р·РјРµСЂР° 
 	{
-		throw "Извините, чат заполнен.\n";
+		throw "РР·РІРёРЅРёС‚Рµ, С‡Р°С‚ Р·Р°РїРѕР»РЅРµРЅ.\n";
 	}
 	else
 	{
 		bool login = true;
 		std::string pas2;
 		user newus;
-		std::cout << "Введите логин:" << std::endl;
+		std::cout << "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ:" << std::endl;
 		std::cin >> log;
 		std::vector<user>::iterator it = v.begin();
 		for (int i = 0; i < v.size(); ++i)
@@ -65,17 +65,17 @@ int chek_us::chek_in()   //Регистрация нового пользователя
 			if (log == (it + i)->get_login())
 			{
 				login = false;
-				std::cout << "Логин уже занят" << std::endl;
+				std::cout << "Р›РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚" << std::endl;
 				break;
 			}
 		}
 		if (login == true)
 		{
-			std::cout << "Введите ваше имя:";
+			std::cout << "Р’РІРµРґРёС‚Рµ РІР°С€Рµ РёРјСЏ:";
 			std::cin >> name;
-			std::cout << "Введите пароль:";
+			std::cout << "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			std::cin >> pas;
-			std::cout << "Подтвердите пароль:";
+			std::cout << "РџРѕРґС‚РІРµСЂРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			std::cin >> pas2;
 			if (pas2 == pas)
 			{
@@ -83,11 +83,11 @@ int chek_us::chek_in()   //Регистрация нового пользователя
 				newus.set_name(name);
 				newus.set_pasw(pas);
 				v.push_back(newus);
-				std::cout << "Регистрация прошла успешно!" << std::endl;
+				std::cout << "Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!" << std::endl;
 			}
 			else
 			{
-				std::cout << "Неверный пароль, регистрация прервана." << std::endl;
+				std::cout << "РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ, СЂРµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРµСЂРІР°РЅР°." << std::endl;
 			}
 		}
 	}
@@ -95,5 +95,5 @@ int chek_us::chek_in()   //Регистрация нового пользователя
 }
 chek_us::~chek_us()
 {
-	//cout << "Деструктор chek_us" << endl;
+	//cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ chek_us" << endl;
 }

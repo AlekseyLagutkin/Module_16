@@ -2,11 +2,11 @@
 #include <string>
 #include "user.h"
 
-class in_chat   //Отправка и просмотр сообщений
+class in_chat   //РћС‚РїСЂР°РІРєР° Рё РїСЂРѕСЃРјРѕС‚СЂ СЃРѕРѕР±С‰РµРЅРёР№
 {
 public:
-	in_chat(std::vector<user>& _v, int _my_num);   //Ссылка на вектор, номер пользователя
-	void s_mes();   //Отправка сообщений
+	in_chat(std::vector<user>& _v, int _my_num);   //РЎСЃС‹Р»РєР° РЅР° РІРµРєС‚РѕСЂ, РЅРѕРјРµСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+	void s_mes();   //РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёР№
 	~in_chat();
 private:
 	std::vector<user>& v;
